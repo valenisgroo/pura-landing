@@ -1,11 +1,10 @@
 import type { LandingContent } from '@/content/landing';
 
 interface FooterProps {
-  logo: LandingContent['logo'];
   footer: LandingContent['footer'];
 }
 
-export function Footer({ logo, footer }: FooterProps) {
+export function Footer({ footer }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (

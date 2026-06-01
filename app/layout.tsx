@@ -19,11 +19,7 @@ export const metadata: Metadata = {
   },
   description: landing.seo.description,
   robots: { index: true, follow: true },
-  icons: {
-    icon: landing.logo.src,
-    shortcut: landing.logo.src,
-    apple: landing.logo.src,
-  },
+  // El favicon lo provee `app/icon.png` por convención de archivos de Next.
 };
 
 const jsonLd = {

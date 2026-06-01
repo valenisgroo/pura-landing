@@ -13,7 +13,7 @@ const avatarColors = [
 
 export function Testimonials({ testimonials }: TestimonialsProps) {
   return (
-    <section id="testimonios" className="w-full bg-white py-16 md:py-24">
+    <section id="testimonios" className="w-full scroll-mt-20 bg-white py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">

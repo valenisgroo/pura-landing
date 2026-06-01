@@ -13,7 +13,7 @@ function BenefitIcon({ name }: { name: string }) {
 
 export function Benefits({ benefits }: BenefitsProps) {
   return (
-    <section id="beneficios" className="w-full bg-slate-100">
+    <section id="beneficios" className="w-full scroll-mt-20 bg-slate-100">
       <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
         <h2 className="text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
           {benefits.title}

@@ -68,7 +68,6 @@ export interface LandingContent {
   };
 
   footer: {
-    tagline: string;
     companyName: string;
   };
 }
@@ -86,7 +85,7 @@ export const landing: LandingContent = {
       'Pura',
       'agua mineral',
     ],
-    ogImage: '/pura-hero.png',
+    ogImage: '/og-image.png',
   },
 
   links: {
@@ -201,7 +200,6 @@ export const landing: LandingContent = {
   },
 
   footer: {
-    tagline: 'Agua purificada de Mendoza, Argentina.',
     companyName: 'Pura',
   },
 };
