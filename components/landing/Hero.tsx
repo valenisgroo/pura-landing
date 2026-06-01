@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
 import type { LandingContent } from '@/content/landing';
 import { MeetingButton } from '@/components/MeetingButton';
 
@@ -11,63 +10,57 @@ interface HeroProps {
 
 export function Hero({ hero, calendlyUrl, formSectionId }: HeroProps) {
   return (
-    <section id="inicio" className="relative h-screen w-full overflow-hidden">
-      <Image
-        src={hero.image.src}
-        alt={hero.image.alt}
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+    <section
+      id="inicio"
+      className="w-full overflow-hidden bg-gradient-to-br from-blue-50 via-white to-sky-50 pt-20 min-h-screen flex items-center"
+    >
+      <div className="mx-auto max-w-6xl w-full px-6 py-16 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/60 to-slate-900/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
-
-      <div className="absolute inset-0 flex items-center">
-        <div className="mx-auto w-full max-w-5xl px-6">
-          <div className="flex max-w-xl flex-col gap-6">
-            <p className="w-fit rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium tracking-wide text-white/90 backdrop-blur-sm">
+          {/* Left: content */}
+          <div className="flex flex-col gap-7">
+            <span className="w-fit rounded-full bg-blue-100 px-4 py-1.5 text-sm font-semibold text-blue-700">
               {hero.eyebrow}
-            </p>
+            </span>
 
-            <h1 className="text-5xl font-bold leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl">
+            <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-slate-900 md:text-6xl">
               {hero.title}
             </h1>
 
-            <p className="max-w-sm text-base leading-relaxed text-white/70 md:text-lg">
+            <p className="max-w-md text-lg leading-relaxed text-slate-600">
               {hero.subtitle}
             </p>
 
-            <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
+            <div className="flex flex-wrap gap-3 pt-2">
               <MeetingButton
                 href={calendlyUrl}
                 label={hero.primaryCta}
                 location="hero"
-                className="inline-flex items-center justify-center rounded-full bg-sky-500 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-400 hover:shadow-sky-400/40"
+                className="inline-flex items-center justify-center rounded-full bg-blue-900 px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-blue-900/20 transition hover:bg-blue-800"
               />
               <a
                 href={`#${formSectionId}`}
-                className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+                className="inline-flex items-center justify-center rounded-full border-2 border-slate-200 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 transition hover:border-blue-300 hover:text-blue-700"
               >
                 {hero.secondaryCta}
               </a>
             </div>
           </div>
+
+          {/* Right: bottle image */}
+          <div className="relative h-[380px] md:h-[520px]">
+            <Image
+              src={hero.image.src}
+              alt={hero.image.alt}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain object-center drop-shadow-2xl"
+            />
+          </div>
+
         </div>
       </div>
-
-      {/* Animated scroll arrow */}
-      <a
-        href="#beneficios"
-        aria-label="Ver beneficios"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-50 transition-opacity hover:opacity-90"
-      >
-        <span className="text-[10px] font-semibold tracking-[0.2em] text-white uppercase">
-          Scroll
-        </span>
-        <ChevronDown size={22} className="text-white animate-bounce" />
-      </a>
     </section>
   );
 }

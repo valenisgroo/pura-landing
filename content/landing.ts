@@ -174,7 +174,7 @@ export const landing: LandingContent = {
       },
       {
         name: 'Diego Fernández',
-        role: 'Gerente de Operaciones, Bodega Altura',
+        role: 'Bodega Altura',
         quote:
           'La pusimos en nuestras oficinas y el feedback fue inmediato. El sabor limpio hace que realmente quieras tomar más agua.',
         rating: 5,
@@ -182,7 +182,7 @@ export const landing: LandingContent = {
       },
       {
         name: 'Valeria Ríos',
-        role: 'Chef y emprendedora',
+        role: 'Chef',
         quote:
           'Uso Pura en mi cocina porque el agua importa. Con una base neutra y limpia, los sabores de mis platos destacan más.',
         rating: 5,

@@ -43,7 +43,9 @@ export function LeadForm({ form, formspreeEndpoint }: LeadFormProps) {
 
   useEffect(() => {
     if (state.errors && state.errors.getFormErrors().length > 0) {
-      track(EVENTS.LEAD_FORM_ERROR, { message: 'Error de validación formspree' });
+      track(EVENTS.LEAD_FORM_ERROR, {
+        message: 'Error de validación formspree',
+      });
     }
   }, [state.errors]);
 
@@ -61,8 +63,8 @@ export function LeadForm({ form, formspreeEndpoint }: LeadFormProps) {
       className="flex flex-col gap-4"
       noValidate
     >
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="name" className="text-sm font-medium text-slate-700">
+      <div className="flex flex-col gap-2">
+        <label htmlFor="name" className="text-sm font-bold text-slate-700 ml-1">
           {form.fields.nameLabel}
         </label>
         <input
@@ -72,18 +74,21 @@ export function LeadForm({ form, formspreeEndpoint }: LeadFormProps) {
           required
           autoComplete="name"
           placeholder={form.fields.namePlaceholder}
-          className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-3 focus:ring-sky-100"
+          className="rounded-2xl border-2 border-slate-100 bg-slate-50/50 px-5 py-4 text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
         />
         <ValidationError
           prefix="Name"
           field="name"
           errors={state.errors}
-          className="text-xs text-red-500"
+          className="text-xs text-red-500 ml-1"
         />
       </div>
 
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="email" className="text-sm font-medium text-slate-700">
+      <div className="flex flex-col gap-2">
+        <label
+          htmlFor="email"
+          className="text-sm font-bold text-slate-700 ml-1"
+        >
           {form.fields.emailLabel}
         </label>
         <input
@@ -95,18 +100,21 @@ export function LeadForm({ form, formspreeEndpoint }: LeadFormProps) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder={form.fields.emailPlaceholder}
-          className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-3 focus:ring-sky-100"
+          className="rounded-2xl border-2 border-slate-100 bg-slate-50/50 px-5 py-4 text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
         />
         <ValidationError
           prefix="Email"
           field="email"
           errors={state.errors}
-          className="text-xs text-red-500"
+          className="text-xs text-red-500 ml-1"
         />
       </div>
 
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="company" className="text-sm font-medium text-slate-700">
+      <div className="flex flex-col gap-2">
+        <label
+          htmlFor="company"
+          className="text-sm font-bold text-slate-700 ml-1"
+        >
           {form.fields.companyLabel}
         </label>
         <input
@@ -115,22 +123,26 @@ export function LeadForm({ form, formspreeEndpoint }: LeadFormProps) {
           type="text"
           autoComplete="organization"
           placeholder={form.fields.companyPlaceholder}
-          className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-3 focus:ring-sky-100"
+          className="rounded-2xl border-2 border-slate-100 bg-slate-50/50 px-5 py-4 text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
         />
         <ValidationError
           prefix="Company"
           field="company"
           errors={state.errors}
-          className="text-xs text-red-500"
+          className="text-xs text-red-500 ml-1"
         />
       </div>
 
       <button
         type="submit"
         disabled={state.submitting || state.succeeded}
-        className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-sky-600 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-[1.02] hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-500/40 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
       >
-        {state.submitting ? 'Enviando…' : state.succeeded ? '¡Enviado!' : form.submitLabel}
+        {state.submitting
+          ? 'Enviando…'
+          : state.succeeded
+            ? '¡Enviado!'
+            : form.submitLabel}
       </button>
 
       {state.errors && state.errors.getFormErrors().length > 0 && (
