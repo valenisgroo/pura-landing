@@ -13,7 +13,7 @@ import { ScrollDepthTracker } from "@/components/ScrollDepthTracker";
 const FORM_SECTION_ID = "formulario";
 
 export const metadata: Metadata = {
-  title: landing.seo.title,
+  title: { absolute: landing.footer.companyName },
   description: landing.seo.description,
   keywords: landing.seo.keywords,
   alternates: { canonical: "/" },

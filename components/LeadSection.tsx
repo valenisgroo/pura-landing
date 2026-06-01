@@ -9,7 +9,7 @@ interface LeadSectionProps {
 
 export function LeadSection({ id, form, formspreeEndpoint }: LeadSectionProps) {
   return (
-    <section id={id} className="w-full scroll-mt-8 bg-slate-100">
+    <section id={id} className="w-full scroll-mt-20 bg-slate-100">
       <div className="mx-auto max-w-xl px-6 py-16 md:py-24">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">

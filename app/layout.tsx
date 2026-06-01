@@ -5,7 +5,6 @@ import { landing } from '@/content/landing';
 import { SITE_URL } from '@/lib/config';
 import { ClarityScript } from '@/components/ClarityScript';
 import { ToasterProvider } from '@/components/ToasterProvider';
-import { PostHogProvider } from '@/components/PostHogProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -20,6 +19,11 @@ export const metadata: Metadata = {
   },
   description: landing.seo.description,
   robots: { index: true, follow: true },
+  icons: {
+    icon: landing.logo.src,
+    shortcut: landing.logo.src,
+    apple: landing.logo.src,
+  },
 };
 
 const jsonLd = {
@@ -39,9 +43,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${geistSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-white text-slate-900">
-        <PostHogProvider>
-          {children}
-        </PostHogProvider>
+        {children}
         <ToasterProvider />
         <ClarityScript />
         <script
