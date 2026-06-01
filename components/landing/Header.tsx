@@ -57,7 +57,7 @@ export function Header({
           href={calendlyUrl}
           label={primaryCta}
           location="header"
-          className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-blue-500/20 transition-all hover:scale-105 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/30"
+          className="inline-flex items-center justify-center rounded-full bg-blue-900 px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-blue-500/20 transition-all hover:scale-105 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/30"
         />
       </div>
     </header>
