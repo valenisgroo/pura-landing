@@ -1,16 +1,11 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { EVENTS, track } from "@/lib/analytics";
+import { useEffect } from 'react';
+import { EVENTS, track } from '@/lib/analytics';
 
 /** Umbrales de scroll (en %) que se reportan a PostHog. */
 const THRESHOLDS = [25, 50, 75, 90, 100] as const;
 
-/**
- * Mide cuánto scrollea el usuario y dispara `scroll_depth_reached` al cruzar
- * cada umbral (una sola vez cada uno). Responde "¿hasta dónde llegan y dónde
- * se van?". No renderiza nada visible.
- */
 export function ScrollDepthTracker() {
   useEffect(() => {
     const reached = new Set<number>();
@@ -44,10 +39,10 @@ export function ScrollDepthTracker() {
       });
     }
 
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     handleScroll(); // chequeo inicial (páginas cortas que ya se ven enteras)
 
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return null;

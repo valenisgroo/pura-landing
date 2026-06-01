@@ -51,6 +51,22 @@ export interface LandingContent {
     errorMessage: string;
   };
 
+  testimonials: {
+    title: string;
+    subtitle: string;
+    items: {
+      name: string;
+      role: string;
+      quote: string;
+      rating: number;
+      initials: string;
+    }[];
+  };
+
+  stats: {
+    items: { value: string; label: string }[];
+  };
+
   footer: {
     tagline: string;
     companyName: string;
@@ -139,10 +155,49 @@ export const landing: LandingContent = {
       companyPlaceholder: 'Nombre de tu empresa',
     },
     submitLabel: 'Enviar',
-    successMessage:
-      '¡Gracias! Recibimos tus datos y te vamos a contactar pronto.',
+    successMessage: '¡Correo enviado correctamente!',
     errorMessage:
       'Ups, no pudimos enviar el formulario. Probá de nuevo en unos minutos.',
+  },
+
+  testimonials: {
+    title: 'Lo que dicen quienes nos eligen',
+    subtitle:
+      'Personas y empresas que encontraron en Pura el agua que buscaban.',
+    items: [
+      {
+        name: 'Martina López',
+        role: 'Nutricionista',
+        quote:
+          'Desde que recomiendo Pura a mis pacientes, todos notan la diferencia. Liviana, sin gusto raro y perfecta para hidratarse bien.',
+        rating: 5,
+        initials: 'ML',
+      },
+      {
+        name: 'Diego Fernández',
+        role: 'Gerente de Operaciones, Bodega Altura',
+        quote:
+          'La pusimos en nuestras oficinas y el feedback fue inmediato. El sabor limpio hace que realmente quieras tomar más agua.',
+        rating: 5,
+        initials: 'DF',
+      },
+      {
+        name: 'Valeria Ríos',
+        role: 'Chef y emprendedora',
+        quote:
+          'Uso Pura en mi cocina porque el agua importa. Con una base neutra y limpia, los sabores de mis platos destacan más.',
+        rating: 5,
+        initials: 'VR',
+      },
+    ],
+  },
+
+  stats: {
+    items: [
+      { value: '+10.000', label: 'Botellas vendidas' },
+      { value: '0', label: 'Aditivos' },
+      { value: '+50', label: 'Puntos de entrega' },
+    ],
   },
 
   footer: {

@@ -3,7 +3,9 @@ import { landing } from "@/content/landing";
 import { SITE_URL } from "@/lib/config";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { Stats } from "@/components/Stats";
 import { Benefits } from "@/components/Benefits";
+import { Testimonials } from "@/components/Testimonials";
 import { LeadSection } from "@/components/LeadSection";
 import { Footer } from "@/components/Footer";
 import { ScrollDepthTracker } from "@/components/ScrollDepthTracker";
@@ -49,6 +51,8 @@ export default function Home() {
           formSectionId={FORM_SECTION_ID}
         />
         <Benefits benefits={landing.benefits} />
+        <Stats stats={landing.stats} />
+        <Testimonials testimonials={landing.testimonials} />
         <LeadSection
           id={FORM_SECTION_ID}
           form={landing.form}

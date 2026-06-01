@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import type { LandingContent } from '@/content/landing';
 
 interface FooterProps {
@@ -10,18 +9,11 @@ export function Footer({ logo, footer }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-slate-200 bg-white">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-6 py-10 text-center">
-        <Image
-          src={logo.src}
-          alt={logo.alt}
-          width={100}
-          height={40}
-          className="h-9 w-auto"
-        />
-        <p className="text-sm text-slate-500">{footer.tagline}</p>
+    <footer className="w-full border-t border-slate-100 bg-white">
+      <div className="mx-auto flex max-w-5xl items-center justify-center px-6 py-6">
         <p className="text-sm text-slate-400">
-          © {year} — {footer.companyName}
+          © {year} {footer.companyName} · by{' '}
+          <span className="font-semibold text-slate-500">Valentino Isgró</span>
         </p>
       </div>
     </footer>
