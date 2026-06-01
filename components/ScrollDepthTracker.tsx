@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import { EVENTS, track } from '@/lib/analytics';
 
-/** Umbrales de scroll (en %) que se reportan a PostHog. */
 const THRESHOLDS = [25, 50, 75, 90, 100] as const;
 
 export function ScrollDepthTracker() {
@@ -28,7 +27,6 @@ export function ScrollDepthTracker() {
       }
     }
 
-    // Throttle con requestAnimationFrame para no saturar en cada pixel de scroll.
     let ticking = false;
     function onScroll() {
       if (ticking) return;

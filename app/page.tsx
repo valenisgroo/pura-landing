@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import { landing } from '@/content/landing';
 import { SITE_URL } from '@/lib/config';
-import { Header } from '@/components/Header';
-import { Hero } from '@/components/Hero';
-import { Stats } from '@/components/Stats';
-import { Benefits } from '@/components/Benefits';
-import { Testimonials } from '@/components/Testimonials';
-import { LeadSection } from '@/components/LeadSection';
-import { Footer } from '@/components/Footer';
+import { Header } from '@/components/landing/Header';
+import { Hero } from '@/components/landing/Hero';
+import { Stats } from '@/components/landing/Stats';
+import { Benefits } from '@/components/landing/Benefits';
+import { Testimonials } from '@/components/landing/Testimonials';
+import { LeadSection } from '@/components/landing/LeadSection';
+import { Footer } from '@/components/landing/Footer';
 import { ScrollDepthTracker } from '@/components/ScrollDepthTracker';
 
 const FORM_SECTION_ID = 'formulario';
