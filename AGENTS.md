@@ -9,4 +9,4 @@ content/
 └── landing.ts
 ```
 
-Las imágenes van en `public/`. Se referencian desde `landing.ts` como `/nombre-archivo.png`.
+Las imágenes van en `public/`. Se referencian desde `landing.ts` como `/nombre-archivo.avif`.

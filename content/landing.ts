@@ -94,7 +94,7 @@ export const landing: LandingContent = {
   },
 
   logo: {
-    src: '/pura-logo.png',
+    src: '/logo-pura-avif.avif',
     alt: 'Pura',
   },
 
@@ -104,7 +104,7 @@ export const landing: LandingContent = {
     subtitle:
       'Pura nace en Mendoza y se purifica para que tomes agua liviana, equilibrada y con un sabor limpio. Hecha para acompañar tu día.',
     image: {
-      src: '/pura-hero.png',
+      src: '/pura-hero.avif',
       alt: 'Botella de agua Pura sobre un fondo natural de Mendoza',
     },
     primaryCta: 'Agendar reunión',
