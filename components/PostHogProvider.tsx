@@ -11,6 +11,7 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
       api_host: 'https://us.i.posthog.com',
       capture_pageview: true,
       capture_pageleave: true,
+      person_profiles: 'identified_only',
     });
   }, []);
 

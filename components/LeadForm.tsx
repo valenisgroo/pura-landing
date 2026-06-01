@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import toast from 'react-hot-toast';
 import type { LandingContent } from '@/content/landing';
-import { EVENTS, track } from '@/lib/analytics';
+import { EVENTS, track, identify } from '@/lib/analytics';
 import { useForm, ValidationError } from '@formspree/react';
 
 interface LeadFormProps {
@@ -13,10 +13,29 @@ interface LeadFormProps {
 
 export function LeadForm({ form, formspreeEndpoint }: LeadFormProps) {
   const [started, setStarted] = useState(false);
+  const [email, setEmail] = useState('');
   const [state, handleSubmit] = useForm(formspreeEndpoint);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const el = formRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          track(EVENTS.LEAD_FORM_VIEWED);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (state.succeeded) {
+      identify(email);
       track(EVENTS.LEAD_FORM_SUBMITTED, { cta_type: 'lead_form' });
       toast.success(form.successMessage);
     }
@@ -37,6 +56,7 @@ export function LeadForm({ form, formspreeEndpoint }: LeadFormProps) {
   return (
     <>
       <form
+        ref={formRef}
         onSubmit={handleSubmit}
         onFocus={handleFirstInteraction}
         className="flex flex-col gap-4"
@@ -73,6 +93,8 @@ export function LeadForm({ form, formspreeEndpoint }: LeadFormProps) {
             type="email"
             required
             autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder={form.fields.emailPlaceholder}
             className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-sky-400 focus:bg-white focus:ring-3 focus:ring-sky-100"
           />

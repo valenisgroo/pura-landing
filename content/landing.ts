@@ -90,7 +90,7 @@ export const landing: LandingContent = {
   },
 
   links: {
-    calendly: 'https://calendly.com/pura/reunion',
+    calendly: 'https://calendly.com/valentinoisgro/30min',
     formspree: FORMSPREE_ID,
   },
 
