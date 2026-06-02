@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import toast from 'react-hot-toast';
-import type { LandingContent } from '@/content/landing';
+import type { LandingContent } from '@/types/landing';
 import { EVENTS, track, identify } from '@/lib/analytics';
 import { useForm, ValidationError } from '@formspree/react';
 

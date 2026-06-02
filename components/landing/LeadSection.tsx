@@ -1,4 +1,4 @@
-import type { LandingContent } from '@/content/landing';
+import type { LandingContent } from '@/types/landing';
 import { LeadForm } from '@/components/LeadForm';
 
 interface LeadSectionProps {

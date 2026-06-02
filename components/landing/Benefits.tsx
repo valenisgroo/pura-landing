@@ -1,5 +1,5 @@
 import { icons } from 'lucide-react';
-import type { LandingContent } from '@/content/landing';
+import type { LandingContent } from '@/types/landing';
 
 interface BenefitsProps {
   benefits: LandingContent['benefits'];

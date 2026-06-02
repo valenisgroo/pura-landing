@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import type { LandingContent } from '@/content/landing';
+import type { LandingContent } from '@/types/landing';
 import { MeetingButton } from '@/components/MeetingButton';
 import Link from 'next/link';
 
