@@ -22,7 +22,7 @@ export function ScrollDepthTracker() {
       for (const threshold of THRESHOLDS) {
         if (percent >= threshold && !reached.has(threshold)) {
           reached.add(threshold);
-          track(EVENTS.SCROLL_DEPTH_REACHED, { depth: threshold });
+          track(EVENTS.SCROLL_DEPTH_REACHED, { depth: `${threshold}%` });
         }
       }
     }
